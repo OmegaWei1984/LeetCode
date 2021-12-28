@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> days = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
+    const vector<int> days = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
 
     int dayOfYear(string date) {
         int year = stoi(date.substr(0, 4));
