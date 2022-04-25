@@ -41,6 +41,24 @@ public:
     }
 };
 
+class Solution2 {
+    vector<int> &nums;
+public:
+    Solution2(vector<int>& nums) : nums(nums) {}
+
+    int pick(int target) {
+        int result;
+        for (int i = 0, counter = 0; i < nums.size(); ++i) {
+            if (nums[i] == target) {
+                ++counter;
+                if (rand() % counter == 0)
+                    result = i;
+            }
+        }
+        return result;
+    }
+};
+
 int main(void) {
     vector<int> nums = {1,2,3,3,3};
     Solution* solution = new Solution(nums);
@@ -50,6 +68,10 @@ int main(void) {
     Solution1 *solution1 = new Solution1(nums);
     int ans1 = solution1->pick(3);
     ans1 = solution1->pick(3);
+
+    Solution2 *solution2 = new Solution2(nums);
+    int ans2 = solution2->pick(3);
+    ans = solution2->pick(3);
 
     return 0;
 }
