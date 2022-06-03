@@ -5,7 +5,7 @@ public:
         for (int i = 1; i * (i + 1) <= 2 * n; ++i) {
             if (
                 i % 2 == 0 ?
-                n % i != 0 && 2 * n * i == 0 :
+                n % i != 0 && 2 * n % i == 0 :
                 n % i == 0
             ) {
                 ++ans;
